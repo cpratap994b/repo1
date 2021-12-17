@@ -14,4 +14,4 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: docker pull ghcr.io/cppkg/busybox:l1
+      - run: docker pull ghcr.io/cppkg/busybbox:l1
