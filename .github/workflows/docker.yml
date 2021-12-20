@@ -1,7 +1,17 @@
-name: say hello
+name: Install docker image from github container registry
+
 on: pull_request
+
+permissions: read-all
+
 jobs:
-  test-job:
+  login-and-install:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello"
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: docker pull ghcr.io/cppkg/busybbox:l1
