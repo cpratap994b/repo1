@@ -1,6 +1,6 @@
 name: Install docker image from github container registry
 
-on: pull_request
+on: workflow_dispatch
 
 permissions: read-all
 
@@ -14,3 +14,4 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }} 
           password: ${{ secrets.GITHUB_TOKEN }} 
+      - run: docker pull ghcr.io/cppkg/busybbox:l1
