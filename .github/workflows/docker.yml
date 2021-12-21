@@ -1,6 +1,6 @@
 name: Install docker image from github container registry
 
-on: pull_request
+on: workflow_dispatch
 
 permissions: read-all
 
